@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chats">
+            <h2>Chats</h2>
+            <ul>
+                {% for chat in chats %}
+                    <li><a href="{{ url_for('chat', chat_id=chat.id) }}">{{ chat.chat_name }}</a></li>
+                {% endfor %}
+            </ul>
+            <form action="{{ url_for('create_chat') }}" method="post">
+                <input type="text" name="chat_name" placeholder="New Chat Name" required>
+                <button type="submit">+</button>
+            </form>
+        </div>
+    </div>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="messages" id="messages">
+            {% for message in messages %}
+                <div class="message">
+                    <strong>{{ message.username }}:</strong> {{ message.message }}
+                </div>
+            {% endfor %}
+        </div>
+        <form id="message-form">
+            <input type="text" id="message" name="message" placeholder="Message" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <button class="arrow-down-button">↓</button>
+    <a href="{{ url_for('index') }}">Back to Chats</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const chat_id = "{{ chat_id }}"; 
+
+        document.getElementById('message-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const message = document.getElementById('message').value;
+            socket.emit('send_message', { chat_id: chat_id, message: message });
+            document.getElementById('message').value = '';
+        });
+
+        socket.on('receive_message', function(data) {
+            if (data.chat_id == chat_id) {
+                const messagesContainer = document.getElementById('messages');
+                const newMessage = document.createElement('div');
+                newMessage.className = 'message';
+                newMessage.innerHTML = `<strong>${data.username}:</strong> ${data.message}`;
+                messagesContainer.appendChild(newMessage);
+            }
+        });
+    </script>
+</body>
+</html>

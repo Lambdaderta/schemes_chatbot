@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.chat-container, .auth-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.messages {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.message {
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="password"] {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6a0dad;
+    color: white;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #5a189a;
+}
+
+.arrow-down-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #6a0dad;
+    color: white;
+    cursor: pointer;
+}
+
+.arrow-down-button:hover {
+    background-color: #5a189a;
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+}
+
+.auth-container a {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #6a0dad;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+.chats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chats h2 {
+    margin-bottom: 20px;
+}
+
+.chats ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.chats ul li {
+    margin-bottom: 10px;
+}
+
+.chats ul li a {
+    text-decoration: none;
+    color: #6a0dad;
+}
+
+.chats ul li a:hover {
+    text-decoration: underline;
+}
+
+.chats form {
+    display: flex;
+    align-items: center;
+}
+
+.chats form input {
+    margin-right: 10px;
+}
