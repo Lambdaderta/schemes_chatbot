@@ -10,8 +10,8 @@
     <div class="auth-container">
         <h2>Регистрация</h2>
         <form action="{{ url_for('register') }}" method="post">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
+            <input type="text" name="username" placeholder="Логин" required>
+            <input type="password" name="password" placeholder="Пароль" required>
             <button type="submit">Зарегестрироваться</button>
         </form>
         <a href="{{ url_for('login') }}">Уже есть аккаунт? Зарегестрируйтесь.</a>
