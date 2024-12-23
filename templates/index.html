@@ -9,18 +9,18 @@
 <body>
     <div class="chat-container">
         <div class="chats">
-            <h2>Chats</h2>
+            <h2>Чаты</h2>
             <ul>
                 {% for chat in chats %}
                     <li><a href="{{ url_for('chat', chat_id=chat.id) }}">{{ chat.chat_name }}</a></li>
                 {% endfor %}
             </ul>
             <form action="{{ url_for('create_chat') }}" method="post">
-                <input type="text" name="chat_name" placeholder="New Chat Name" required>
+                <input type="text" name="chat_name" placeholder="Название нового чата" required>
                 <button type="submit">+</button>
             </form>
         </div>
     </div>
-    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('logout') }}">Выйти</a>
 </body>
 </html>
