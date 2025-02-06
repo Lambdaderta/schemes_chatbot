@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='images/background.jpg') }}") repeat;
+            background-position: center;
+            background-size: 70%;
+        }
+    </style>
 </head>
 <body>
     <div class="chat-container">
-        <div class="chats">
+        <div class="logout">
+            <a href="{{ url_for('logout') }}" class="oboudno">Выйти</a>
+        </div>
+            <div class="chats">
             <h2>Чаты</h2>
             <ul>
                 {% for chat in chats %}
@@ -17,10 +27,9 @@
             </ul>
             <form action="{{ url_for('create_chat') }}" method="post">
                 <input type="text" name="chat_name" placeholder="Название нового чата" required>
-                <button type="submit">+</button>
+                <button type="submit">Добавить чат</button>
             </form>
         </div>
     </div>
-    <a href="{{ url_for('logout') }}">Выйти</a>
 </body>
 </html>

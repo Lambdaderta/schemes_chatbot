@@ -45,7 +45,6 @@ def create_tables():
     conn.commit()
     conn.close()
 
-
 @app.route('/')
 def index():
     if 'username' not in session:
@@ -108,7 +107,6 @@ def chat(chat_id):
     conn.close()
     return render_template('chat.html', chat_id=chat_id, messages=messages)
 
-
 @socketio.on('send_message')
 def handle_send_message_event(data):
     chat_id = data['chat_id']
@@ -120,6 +118,16 @@ def handle_send_message_event(data):
     conn.close()
     emit('receive_message', {'chat_id': chat_id, 'username': username, 'message': message}, broadcast=True)
 
+    bot_message = '''Начинается с 4 вп, затем 3 сс2н, 2 сс1н, далее 2 вп, затем 2 сс1н, затем снова 2 вп, затем снова 3 сс2н, далее 3 вп, завершается сс.
+                     Схема: 4 вп, 3 сс2н, 2 сс1н, 2 вп, 2 сс1н, 2 вп, 3 сс2н, 3 вп, сс
+                     Схема успешно сгенерирована! Удачи в вязании!'''
+    conn = get_db_connection()
+    conn.execute('INSERT INTO messages (chat_id, username, message) VALUES (?, ?, ?)', (chat_id, "Клубочки крючочки", bot_message))
+    conn.commit()
+    conn.close()
+    emit('receive_message', {'chat_id': chat_id, 'username': "Клубочки крючочки", 'message': bot_message}, broadcast=True)
+
 if __name__ == '__main__':
     create_tables()
     socketio.run(app, debug=True)
+

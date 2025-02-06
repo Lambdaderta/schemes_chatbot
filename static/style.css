@@ -1,6 +1,5 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,7 +12,29 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 500px;
+}
+
+.logout {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.oboudno {
+    text-decoration: none;
+    background-color: #E3CECB;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 90px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: black;
+    border-style: solid;
+    color: rgb(0, 0, 0);
+    border-width: 1px;
 }
 
 .messages {
@@ -34,21 +55,29 @@ form {
 input[type="text"], input[type="password"] {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #000000;
     border-radius: 5px;
+    
 }
 
 button[type="submit"] {
     padding: 10px;
-    border: none;
     border-radius: 5px;
-    background-color: #6a0dad;
+    background-color: #E3CECB;
     color: white;
     cursor: pointer;
+    border-color: black;
+    border-style: solid;
+    color: rgb(0, 0, 0);
+    border-width: 1px;
 }
 
 button[type="submit"]:hover {
-    background-color: #5a189a;
+    background-color: #E3CECB;
+    border-color: black;
+    border-style: solid;
+    color: rgb(0, 0, 0);
+    border-width: 1px;
 }
 
 .arrow-down-button {
@@ -56,15 +85,22 @@ button[type="submit"]:hover {
     top: 20px;
     right: 20px;
     padding: 10px;
-    border: none;
     border-radius: 5px;
-    background-color: #6a0dad;
+    background-color: #E3CECB;
     color: white;
     cursor: pointer;
+    border-color: black;
+    border-style: solid;
+    color: rgb(0, 0, 0);
+    border-width: 1px;
 }
 
 .arrow-down-button:hover {
-    background-color: #5a189a;
+    background-color: #E3CECB;
+    border-color: black;
+    border-style: solid;
+    color: rgb(0, 0, 0);
+    border-width: 1px;
 }
 
 .auth-container h2 {
@@ -75,9 +111,10 @@ button[type="submit"]:hover {
     display: block;
     margin-top: 10px;
     text-align: center;
-    color: #6a0dad;
+    color: #E3CECB;
     text-decoration: none;
 }
+
 
 .auth-container a:hover {
     text-decoration: underline;
@@ -104,7 +141,7 @@ button[type="submit"]:hover {
 
 .chats ul li a {
     text-decoration: none;
-    color: #6a0dad;
+    color: #000000;
 }
 
 .chats ul li a:hover {
@@ -118,4 +155,11 @@ button[type="submit"]:hover {
 
 .chats form input {
     margin-right: 10px;
+}
+
+button {
+    border-color: black;
+    border-style: solid;
+    color: rgb(0, 0, 0);
+    border-width: 1px;
 }

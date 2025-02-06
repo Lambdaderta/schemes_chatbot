@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background: url("{{ url_for('static', filename='images/background.jpg') }}") repeat;
+            background-position: center;
+            background-size: 70%;
+        }
+    </style>
 </head>
 <body>
     <div class="auth-container">
@@ -14,7 +21,7 @@
             <input type="password" name="password" placeholder="Пароль" required>
             <button type="submit">Зарегестрироваться</button>
         </form>
-        <a href="{{ url_for('login') }}">Уже есть аккаунт? Зарегестрируйтесь.</a>
+        <a href="{{ url_for('login') }}">Уже есть аккаунт? Войдите.</a>
     </div>
 </body>
 </html>
